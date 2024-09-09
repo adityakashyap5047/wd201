@@ -1,5 +1,5 @@
 const todoList = () => {
-    all = []
+    let all = []
   
     const add = (todoItem) => {
       all.push(todoItem)
@@ -10,20 +10,18 @@ const todoList = () => {
     }
   
     const overdue = () => {
-      const today = new Date()
-      return all.filter(item => new Date(item.dueDate) < today && !item.completed)
+      const today = formattedDate(new Date())
+      return all.filter(item => item.dueDate < today && !item.completed)
     }
   
     const dueToday = () => {
-      const today = new Date()
-      const formattedToday = formattedDate(today)
-      return all.filter(item => item.dueDate === formattedToday && !item.completed)
+      const today = formattedDate(new Date())
+      return all.filter(item => item.dueDate === today)
     }
   
     const dueLater = () => {
-      const today = new Date()
-      const formattedToday = formattedDate(today)
-      return all.filter(item => item.dueDate !== formattedToday && new Date(item.dueDate) > today && !item.completed)
+      const today = formattedDate(new Date())
+      return all.filter(item => item.dueDate > today)
     }
   
     const toDisplayableList = (list) => {
@@ -90,4 +88,4 @@ const todoList = () => {
   let itemsDueLater = todos.dueLater()
   let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
   console.log(formattedItemsDueLater)
-  console.log("\n\n")  
+  console.log("\n\n")
