@@ -9,5 +9,8 @@
   "keywords": [],
   "author": "Aditya Kumar <adityakashyap5047@gmail.com>",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
 }
