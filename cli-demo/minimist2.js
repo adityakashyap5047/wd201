@@ -1,9 +1,11 @@
-//npm package for CLI Input ---> minimist
-
 const minimist = require('minimist');
-const args = minimist(process.argv.slice(2));
+const args = minimist(process.argv.slice(2), {
+    default: {
+        num1: 5,
+        operation: 'add'
+    }
+});
 
-//We can access the arguments passed to the script using the args object.
 const num1 = parseInt(args.num1);
 const num2 = parseInt(args.num2);
 const operation = args.operation;
@@ -22,17 +24,5 @@ if (operation === 'add') {
 
 //To run it we can
 
-//  ```node .\minimistCli.js --num1 5 --num2 9 --operation add```
-// Output --->  The sum of 5 and 9 is 14.
-
-
-//With Minimist, the args object would look like this:
-
-// args = {
-//   "operation": "add",
-//   "num1": 5,
-//   "num2": 10,
-//   "_": []
-// }
-
-//The _ property is an array that contains any arguments without a label or flag, which in this case is empty because we used named arguments.
+//   ```node minimist2.js --num2 8```
+//  Output ---> The sum of 5 and 8 is 13.
