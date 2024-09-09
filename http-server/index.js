@@ -35,12 +35,15 @@ http.createServer((req, res) => {
   switch (url) {
     case "/project":
       res.write(projectContent);
+      res.end();
       break;
     case "/registration":
       res.write(registrationContent);
+      res.end();
       break;
     default:
       res.write(homeContent);
+      res.end();
       break;
   }
 }).listen(port);
