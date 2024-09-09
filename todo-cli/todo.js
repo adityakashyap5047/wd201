@@ -1,19 +1,16 @@
-console.log('Hello 1');
-
-// Print message after 2 second
-setTimeout(function() {
-   console.log('Hello 2');
-}, 2000);
-console.log('Hello 3');
-
-const firstName = (name) => console.log(name);
-
-const lastName = (name) => console.log(name);
-
-const printName = () => {
-    console.log("My name is: ");
-    firstName("Aditya");
-    lastName("Kumar");
+const todoList = () => {
+    all = [];
+    const add = (todoTask) => {
+        all.push(todoTask);
+        console.log(all);
+    }
+    const markAsCompleted = (index) => {
+        all[index].completed = true;
+        console.log(all);
+    }
+    return {
+        all,
+        add,
+        markAsCompleted
+    }
 }
-
-printName();
