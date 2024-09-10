@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "main": "assert.js",
   "scripts": {
-    "test": "jest",
-    "prepare": "cd .. && husky install todo-cli/.husky"
+    "test": "jest"
   },
   "keywords": [],
   "author": "Aditya Kumar <adityakashyap5047@gmail.com>",
