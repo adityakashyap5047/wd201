@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 const args = process.argv;
 
 const num1 = parseInt(args[2]);
