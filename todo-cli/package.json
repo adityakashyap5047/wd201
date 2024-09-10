@@ -3,15 +3,13 @@
   "version": "1.0.0",
   "main": "assert.js",
   "scripts": {
-    "test": "jest",
-    "prepare": "husky install"
+    "test": "jest"
   },
   "keywords": [],
   "author": "Aditya Kumar <adityakashyap5047@gmail.com>",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "husky": "^9.1.5",
     "jest": "^29.7.0"
   }
 }
