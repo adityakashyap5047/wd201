@@ -28,5 +28,5 @@ describe("Todolist test suite", () => {
         expect(all[0].completed).toBe(false);
         markAsComplete(0);
         expect(all[0].completed).toBe(true);
-    })
+    });
 })
