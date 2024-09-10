@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "assert.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Aditya Kumar <adityakashyap5047@gmail.com>",
