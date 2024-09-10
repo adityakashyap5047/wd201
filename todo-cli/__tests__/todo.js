@@ -3,8 +3,7 @@ const todoList = require("../todo");
 const {all, markAsComplete, add, overdue, dueToday, dueLater, toDisplayableList} = todoList();
 
 describe("Todolist test suite", () => {
-    test("should add new todo", () => {
-        expect(all.length).toBe(0);
+    beforeAll(() => {
         add(
             {
                 title: "Test todo",
@@ -12,7 +11,17 @@ describe("Todolist test suite", () => {
                 dueDate: new Date().toISOString().split("T")[0]
             }
         )
-        expect(all.length).toBe(1);
+    })
+    test("should add new todo", () => {
+        const todoItemsCount = all.length;
+        add(
+            {
+                title: "Test todo",
+                completed: false,
+                dueDate: new Date().toISOString().split("T")[0]
+            }
+        )
+        expect(all.length).toBe(todoItemsCount + 1);
     });
 
     test("Should mark a todo as complete", () => {
