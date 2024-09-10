@@ -1,6 +1,7 @@
+/* eslint-disable no-undef */
 const todoList = require("../todo");
 
-const {all, markAsComplete, add, overdue, dueToday, dueLater, toDisplayableList} = todoList();
+const {all, markAsComplete, add} = todoList();
 
 describe("Todolist test suite", () => {
     beforeAll(() => {
