@@ -5,20 +5,11 @@
   "scripts": {
     "test": "jest"
   },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write ."
-    ]
-  },
   "keywords": [],
   "author": "Aditya Kumar <adityakashyap5047@gmail.com>",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "jest": "^29.7.0"
-  },
-  "dependencies": {
-    "husky": "^9.1.5"
   }
 }
