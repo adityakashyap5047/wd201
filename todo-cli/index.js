@@ -27,7 +27,9 @@ const countItems = async () => {
 
 const getAllTodos = async () => {
   try {
-    const todos = await Todo.findAll();
+    const todos = await Todo.findAll({
+      order: [["id", "DESC"]],
+    });
     const todoList = todos.map((todo) => todo.displayableString()).join("\n");
     console.log(todoList);
   } catch (error) {
@@ -36,7 +38,8 @@ const getAllTodos = async () => {
 };
 
 (async () => {
-  //   await createTodo();
-  //   await countItems();
+  //IIFE
+  // await createTodo();
+  // await countItems();
   await getAllTodos();
 })();
