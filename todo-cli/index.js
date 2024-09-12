@@ -28,7 +28,7 @@ const countItems = async () => {
 const getAllTodos = async () => {
   try {
     const todos = await Todo.findAll({
-      //   where: {               // To get only completed todos
+      //   where: {                     // To get only completed todos
       //     completed: true,
       //   },
       order: [["id", "DESC"]],
