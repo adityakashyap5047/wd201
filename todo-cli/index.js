@@ -44,7 +44,7 @@ const getTodo = async () => {
   try {
     const todo = await Todo.findOne({
       where: {
-        completed: true,
+        completed: false,
       },
       order: [["id", "DESC"]],
     });
