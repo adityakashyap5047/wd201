@@ -70,11 +70,25 @@ const updateItem = async (id) => {
   }
 };
 
+const deleteItem = async (id) => {
+  try {
+    const todo = await Todo.destroy({
+      where: {
+        id,
+      },
+    });
+    console.log(`Deleted todo with id ${id}`);
+  } catch (error) {
+    console.error("Error deleting todo", error);
+  }
+};
+
+//IIFE
 (async () => {
-  //IIFE
   // await createTodo();
   // await countItems();
-  await getAllTodos();
+  //await getAllTodos();
   // await getTodo();
   // await updateItem(2);
+  // await deleteItem(2);
 })();
