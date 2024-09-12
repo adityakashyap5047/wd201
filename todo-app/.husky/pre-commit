@@ -1,2 +1,7 @@
+# Exit early if no files in this directory are staged
+if ! git diff --cached --name-only | grep -q '^todo-app/'; then
+  exit 0
+fi
+
 npm test
 
