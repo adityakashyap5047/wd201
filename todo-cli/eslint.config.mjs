@@ -11,6 +11,6 @@ export default [
   },
   pluginJs.configs.recommended,
   {
-    ignores: ["models/", "migrations/"], // Add the folders you want to ignore here
+    ignores: ["models/", "migrations/", "addTodo.js", "completeTodo.js"], // Add the folders you want to ignore here
   },
 ];
