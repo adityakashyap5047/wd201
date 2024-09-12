@@ -9,7 +9,7 @@ class Todo extends Model {
 
   displayableString() {
     // instance method to display the task
-    return `${this.id}. ${this.title} - ${this.dueDate}`;
+    return `${this.completed ? "[x]" : "[]"} ${this.id}. ${this.title} - ${this.dueDate}`;
   }
 }
 
