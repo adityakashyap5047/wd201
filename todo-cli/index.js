@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const { connect } = require("./connectDb");
 const Todo = require("./TodoModel");
 
@@ -15,6 +16,16 @@ const createTodo = async () => {
   }
 };
 
+const countItems = async () => {
+  try {
+    const totalCount = await Todo.count();
+    console.log(`Total number of items: ${totalCount}`);
+  } catch (error) {
+    console.error("Error counting items", error);
+  }
+};
+
 (async () => {
-  await createTodo();
+  //   await createTodo();
+  await countItems();
 })();
