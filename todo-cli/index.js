@@ -40,9 +40,24 @@ const getAllTodos = async () => {
   }
 };
 
+const getTodo = async () => {
+  try {
+    const todo = await Todo.findOne({
+      where: {
+        completed: true,
+      },
+      order: [["id", "DESC"]],
+    });
+    console.log(todo.displayableString());
+  } catch (error) {
+    console.error("Error getting all todos", error);
+  }
+};
+
 (async () => {
   //IIFE
   // await createTodo();
   // await countItems();
-  await getAllTodos();
+  // await getAllTodos();
+  await getTodo();
 })();
