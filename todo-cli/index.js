@@ -28,6 +28,9 @@ const countItems = async () => {
 const getAllTodos = async () => {
   try {
     const todos = await Todo.findAll({
+      where: {
+        completed: true,
+      },
       order: [["id", "DESC"]],
     });
     const todoList = todos.map((todo) => todo.displayableString()).join("\n");
