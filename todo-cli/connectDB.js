@@ -1,8 +1,10 @@
+/* eslint-disable no-undef */
+require("dotenv").config();
 const Sequelize = require("sequelize");
 
 const database = "todo_db";
 const username = "postgres";
-const password = "Adityakumar@3488";
+const password = process.env.DB_PASSWORD;
 const sequelize = new Sequelize(database, username, password, {
   host: "localhost",
   dialect: "postgres",
@@ -16,3 +18,5 @@ module.exports = {
   connect,
   sequelize,
 };
+
+console.log(process.env.DB_PASSWORD);
