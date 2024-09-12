@@ -3,7 +3,13 @@ const { sequelize } = require("./connectDb");
 
 class Todo extends Model {
   static async addTask(params) {
+    // Static method to add a task
     return await Todo.create(params);
+  }
+
+  displayableString() {
+    // instance method to display the task
+    return `${this.id}. ${this.title} - ${this.dueDate} - ${this.completed}`;
   }
 }
 
