@@ -72,18 +72,18 @@ const updateItem = async (id) => {
 
 const deleteItem = async (id) => {
   try {
-    const todo = await Todo.destroy({
+    const deletedTodoCount = await Todo.destroy({
       where: {
         id,
       },
     });
-    console.log(`Deleted todo with id ${id}`);
+    console.log(`Deleted ${deletedTodoCount} rows with id ${id}`);
   } catch (error) {
     console.error("Error deleting todo", error);
   }
 };
 
-//IIFE
+//IIFE  ---> We use Immediately Invoked Function Expressions (IIFE) to run the code immediately after the definition.
 (async () => {
   // await createTodo();
   // await countItems();
