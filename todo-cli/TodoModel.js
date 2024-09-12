@@ -22,6 +22,6 @@ Todo.init(
   },
 );
 
-module.exports = Todo;
+module.exports = Todo; // Creating the table in the database
 
 Todo.sync();
