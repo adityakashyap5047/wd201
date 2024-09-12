@@ -28,9 +28,9 @@ const countItems = async () => {
 const getAllTodos = async () => {
   try {
     const todos = await Todo.findAll({
-      where: {
-        completed: true,
-      },
+      //   where: {
+      //     completed: true,
+      //   },
       order: [["id", "DESC"]],
     });
     const todoList = todos.map((todo) => todo.displayableString()).join("\n");
@@ -54,10 +54,27 @@ const getTodo = async () => {
   }
 };
 
+const updateItem = async (id) => {
+  try {
+    const todo = await Todo.update(
+      { completed: true },
+      {
+        where: {
+          id,
+        },
+      },
+    );
+    console.log("Updated todo");
+  } catch (error) {
+    console.error("Error updating todo", error);
+  }
+};
+
 (async () => {
   //IIFE
   // await createTodo();
   // await countItems();
-  // await getAllTodos();
-  await getTodo();
+  await getAllTodos();
+  // await getTodo();
+  // await updateItem(2);
 })();
